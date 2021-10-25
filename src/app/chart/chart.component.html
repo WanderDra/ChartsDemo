@@ -1,0 +1,26 @@
+<dx-chart #chart
+    [dataSource]="chartDataSource"
+    (onSeriesHoverChanged)="onBarHoverChanged($event)"
+    (onLegendClick)="legendClickHandler($event)">
+    <dxi-series 
+        type="bar"
+        argumentField="fruit" 
+        valueField="count"
+        name="fruit"
+        >
+        <dxo-label 
+            [visible]="showLabel"
+            [customizeText]="customizeText">
+            <dxo-connector [visible]="showLabel"></dxo-connector>
+        </dxo-label>
+    </dxi-series>
+    <dxi-series 
+        argumentField="fruit" 
+        valueField="count"
+        hoverMode="includePoints"
+        name="fruit-line">
+    </dxi-series>
+    <dxo-loading-indicator [enabled]="true"></dxo-loading-indicator>
+</dx-chart>
+<button (click)="onGetBtnClicked()">Get Chart Data</button>
+<button (click)="onLabelToggleBtn()">Toggle Label</button>

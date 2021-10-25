@@ -1,0 +1,15 @@
+<dx-pie-chart 
+    [dataSource]="pieChartDataSource"
+    [type]="type">
+    <dxo-title
+        text="Fruits">
+    </dxo-title>
+    <dxi-series argumentField="fruit" valueField="count">
+        <dxo-label 
+            [visible]="true"
+            [customizeText]="customizeText">
+            <dxo-connector [visible]="true"></dxo-connector>
+        </dxo-label>
+    </dxi-series>
+</dx-pie-chart>
+<button (click)="onSwitchTypeBtnClicked()">Switch Type</button>
